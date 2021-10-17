@@ -2,8 +2,8 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
-import { useFormik } from 'formik';
-import * as yup from 'yup';
+/* import { useFormik } from 'formik';
+import * as yup from 'yup'; */
 
 export const Form = ({ searchQuery, handleWeatherFetchClick, setSearchQuery }) => {
   //Handlers
