@@ -10,7 +10,6 @@ import snow from '../images/snow.png';
 import fog from '../images/fog.png';
 import storms from '../images/storms.png';
 import sunny from '../images/sunny.png';
-import { sizeHeight } from '@mui/system';
 
 export const WeatherUI = ({
   city,
