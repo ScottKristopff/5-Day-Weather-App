@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { AppWrapper, MainContent } from '../Styles/styles';
 import styled from 'styled-components/macro';
 import { Route, Switch } from 'react-router-dom';
 //?Component Imports
