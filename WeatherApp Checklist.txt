@@ -1,0 +1,19 @@
+Weather App Todo CheckList
+
+1) Change Font
+
+2) Add more content to the weekday panels
+
+3) Increase the grid gap
+
+4) Think about a horizontal grid layout
+
+5) Create a custom Title Design
+
+6) Change farenheight to degrees maybe
+
+7) Make sure everything is aligned
+
+8) Be able to input with the enter key
+
+9) Form Control
