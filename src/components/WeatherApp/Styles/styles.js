@@ -29,9 +29,9 @@ export const MainContent = styled.div`
 
 export const WeatherContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10 px;
+  grid-column-gap: 10px;
   grid-row-gap: 10px;
   margin: 0 auto;
   width: 100vw;

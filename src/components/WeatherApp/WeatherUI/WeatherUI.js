@@ -10,6 +10,7 @@ import snow from '../images/snow.png';
 import fog from '../images/fog.png';
 import storms from '../images/storms.png';
 import sunny from '../images/sunny.png';
+import { Boop } from '../../Animations/Boop';
 
 export const WeatherUI = ({
   city,
@@ -30,7 +31,13 @@ export const WeatherUI = ({
   conditionsID4,
   temperatureDay5,
   conditionsDay5,
-  conditionsID5
+  conditionsID5,
+  temperatureDay6,
+  conditionsDay6,
+  conditionsID6,
+  temperatureDay7,
+  conditionsDay7,
+  conditionsID7
 }) => {
   /*   let date = new Date(); */
 
@@ -51,7 +58,9 @@ export const WeatherUI = ({
               <h3>{city}</h3>
             </City>
             <Temp>
-              <h1>{JSON.stringify(temperatureNow).slice(0, 2)}&#176;</h1>
+              <Boop rotation={10} scale={1}>
+                <h1>{JSON.stringify(temperatureNow).slice(0, 2)}&#176;</h1>
+              </Boop>
             </Temp>
             <Conditions>
               <h2>{conditionsToday}</h2>
@@ -62,93 +71,154 @@ export const WeatherUI = ({
               </p>
             </TodayHigh>
           </MainWeather>
-          {/* <Today>
-            <WeekDays>
-              <p>Today</p>
-            </WeekDays>
-            {conditionsID === 'Clouds' && <PartlyCloudyImage />}
-            {conditionsID === 'Rain' && <RainImage />}
-            {conditionsID === 'Drizzle' && <RainImage />}
-            {conditionsID === 'Thunderstorm' && <StormImage />}
-            {conditionsID === 'Snow' && <SnowImage />}
-            {conditionsID === 'Atmosphere' && <FogImage />}
-            {conditionsID === 'Clear' && <SunnyImage />}
-            <FutureTemps>
-              <h1>{JSON.stringify(temperatureNow).slice(0, 2)}&#176;</h1>
-            </FutureTemps>
-          </Today> */}
           <Tomorrow>
-            <WeekDays>
-              <p>
-                <Moment add={{ days: 1 }} format="ddd">
-                  {dates}
-                </Moment>
-              </p>
-            </WeekDays>
-            {conditionsIDTomorrow === 'Clouds' && <PartlyCloudyImage />}
-            {conditionsIDTomorrow === 'Rain' && <RainImage />}
-            {conditionsIDTomorrow === 'Drizzle' && <RainImage />}
-            {conditionsIDTomorrow === 'Thunderstorm' && <StormImage />}
-            {conditionsIDTomorrow === 'Snow' && <SnowImage />}
-            {conditionsIDTomorrow === 'Atmosphere' && <FogImage />}
-            {conditionsIDTomorrow === 'Clear' && <SunnyImage />}
+            <WeekdayWrapper>
+              <WeekDays>
+                <p>
+                  <Moment add={{ days: 1 }} format="ddd">
+                    {dates}
+                  </Moment>
+                </p>
+              </WeekDays>
+              <WeekdayConditions>{conditionsTomorrow}</WeekdayConditions>
+            </WeekdayWrapper>
+            <WeatherImgWrapper>
+              <Boop x={0} y={-10}>
+                {conditionsIDTomorrow === 'Clouds' && <PartlyCloudyImage />}
+                {conditionsIDTomorrow === 'Rain' && <RainImage />}
+                {conditionsIDTomorrow === 'Drizzle' && <RainImage />}
+                {conditionsIDTomorrow === 'Thunderstorm' && <StormImage />}
+                {conditionsIDTomorrow === 'Snow' && <SnowImage />}
+                {conditionsIDTomorrow === 'Atmosphere' && <FogImage />}
+                {conditionsIDTomorrow === 'Clear' && <SunnyImage />}
+              </Boop>
+            </WeatherImgWrapper>
             <FutureTemps>
               <h1>{JSON.stringify(temperatureTomorrow).slice(0, 2)}&#176;</h1>
             </FutureTemps>
           </Tomorrow>
           <ThirdDay>
-            <WeekDays>
-              <p>
-                <Moment add={{ days: 2 }} format="ddd">
-                  {dates}
-                </Moment>
-              </p>
-            </WeekDays>
-            {conditionsID3 === 'Clouds' && <PartlyCloudyImage />}
-            {conditionsID3 === 'Rain' && <RainImage />}
-            {conditionsID3 === 'Drizzle' && <RainImage />}
-            {conditionsID3 === 'Thunderstorm' && <StormImage />}
-            {conditionsID3 === 'Snow' && <SnowImage />}
-            {conditionsID3 === 'Atmosphere' && <FogImage />}
-            {conditionsID3 === 'Clear' && <SunnyImage />}
+            <WeekdayWrapper>
+              <WeekDays>
+                <p>
+                  <Moment add={{ days: 2 }} format="ddd">
+                    {dates}
+                  </Moment>
+                </p>
+              </WeekDays>
+              <WeekdayConditions>{conditionsDay3}</WeekdayConditions>
+            </WeekdayWrapper>
+            <WeatherImgWrapper>
+              <Boop x={0} y={-10}>
+                {conditionsID3 === 'Clouds' && <PartlyCloudyImage />}
+                {conditionsID3 === 'Rain' && <RainImage />}
+                {conditionsID3 === 'Drizzle' && <RainImage />}
+                {conditionsID3 === 'Thunderstorm' && <StormImage />}
+                {conditionsID3 === 'Snow' && <SnowImage />}
+                {conditionsID3 === 'Atmosphere' && <FogImage />}
+                {conditionsID3 === 'Clear' && <SunnyImage />}
+              </Boop>
+            </WeatherImgWrapper>
             <FutureTemps>
               <h1>{JSON.stringify(temperatureDay3).slice(0, 2)}&#176;</h1>
             </FutureTemps>
           </ThirdDay>
           <FourthDay>
-            <WeekDays>
-              <Moment add={{ days: 3 }} format="ddd">
-                {dates}
-              </Moment>
-            </WeekDays>
-            {conditionsID4 === 'Clouds' && <PartlyCloudyImage />}
-            {conditionsID4 === 'Rain' && <RainImage />}
-            {conditionsID4 === 'Drizzle' && <RainImage />}
-            {conditionsID4 === 'Thunderstorm' && <StormImage />}
-            {conditionsID4 === 'Snow' && <SnowImage />}
-            {conditionsID4 === 'Atmosphere' && <FogImage />}
-            {conditionsID4 === 'Clear' && <SunnyImage />}
+            <WeekdayWrapper>
+              <WeekDays>
+                <Moment add={{ days: 3 }} format="ddd">
+                  {dates}
+                </Moment>
+              </WeekDays>
+              <WeekdayConditions>{conditionsDay4}</WeekdayConditions>
+            </WeekdayWrapper>
+            <WeatherImgWrapper>
+              <Boop x={0} y={-10}>
+                {conditionsID4 === 'Clouds' && <PartlyCloudyImage />}
+                {conditionsID4 === 'Rain' && <RainImage />}
+                {conditionsID4 === 'Drizzle' && <RainImage />}
+                {conditionsID4 === 'Thunderstorm' && <StormImage />}
+                {conditionsID4 === 'Snow' && <SnowImage />}
+                {conditionsID4 === 'Atmosphere' && <FogImage />}
+                {conditionsID4 === 'Clear' && <SunnyImage />}
+              </Boop>
+            </WeatherImgWrapper>
             <FutureTemps>
               <h1>{JSON.stringify(temperatureDay4).slice(0, 2)}&#176;</h1>
             </FutureTemps>
           </FourthDay>
           <FiveDay>
-            <WeekDays>
-              <Moment add={{ days: 4 }} format="ddd">
-                {dates}
-              </Moment>
-            </WeekDays>
-            {conditionsID5 === 'Clouds' && <PartlyCloudyImage />}
-            {conditionsID5 === 'Rain' && <RainImage />}
-            {conditionsID5 === 'Drizzle' && <RainImage />}
-            {conditionsID5 === 'Thunderstorm' && <StormImage />}
-            {conditionsID5 === 'Snow' && <SnowImage />}
-            {conditionsID5 === 'Atmosphere' && <FogImage />}
-            {conditionsID5 === 'Clear' && <SunnyImage />}
+            <WeekdayWrapper>
+              <WeekDays>
+                <Moment add={{ days: 4 }} format="ddd">
+                  {dates}
+                </Moment>
+              </WeekDays>
+              <WeekdayConditions>{conditionsDay5}</WeekdayConditions>
+            </WeekdayWrapper>
+            <WeatherImgWrapper>
+              <Boop x={0} y={-10}>
+                {conditionsID5 === 'Clouds' && <PartlyCloudyImage />}
+                {conditionsID5 === 'Rain' && <RainImage />}
+                {conditionsID5 === 'Drizzle' && <RainImage />}
+                {conditionsID5 === 'Thunderstorm' && <StormImage />}
+                {conditionsID5 === 'Snow' && <SnowImage />}
+                {conditionsID5 === 'Atmosphere' && <FogImage />}
+                {conditionsID5 === 'Clear' && <SunnyImage />}
+              </Boop>
+            </WeatherImgWrapper>
             <FutureTemps>
               <h1>{JSON.stringify(temperatureDay5).slice(0, 2)}&#176;</h1>
             </FutureTemps>
           </FiveDay>
+          <SixDay>
+            <WeekdayWrapper>
+              <WeekDays>
+                <Moment add={{ days: 5 }} format="ddd">
+                  {dates}
+                </Moment>
+              </WeekDays>
+              <WeekdayConditions>{conditionsDay6}</WeekdayConditions>
+            </WeekdayWrapper>
+            <WeatherImgWrapper>
+              <Boop x={0} y={-10}>
+                {conditionsID6 === 'Clouds' && <PartlyCloudyImage />}
+                {conditionsID6 === 'Rain' && <RainImage />}
+                {conditionsID6 === 'Drizzle' && <RainImage />}
+                {conditionsID6 === 'Thunderstorm' && <StormImage />}
+                {conditionsID6 === 'Snow' && <SnowImage />}
+                {conditionsID6 === 'Atmosphere' && <FogImage />}
+                {conditionsID6 === 'Clear' && <SunnyImage />}
+              </Boop>
+            </WeatherImgWrapper>
+            <FutureTemps>
+              <h1>{JSON.stringify(temperatureDay6).slice(0, 2)}&#176;</h1>
+            </FutureTemps>
+          </SixDay>
+          <SevenDay>
+            <WeekdayWrapper>
+              <WeekDays>
+                <Moment add={{ days: 6 }} format="ddd">
+                  {dates}
+                </Moment>
+              </WeekDays>
+              <WeekdayConditions>{conditionsDay7}</WeekdayConditions>
+            </WeekdayWrapper>
+            <WeatherImgWrapper>
+              <Boop x={0} y={-10}>
+                {conditionsID7 === 'Clouds' && <PartlyCloudyImage />}
+                {conditionsID7 === 'Rain' && <RainImage />}
+                {conditionsID7 === 'Drizzle' && <RainImage />}
+                {conditionsID7 === 'Thunderstorm' && <StormImage />}
+                {conditionsID7 === 'Snow' && <SnowImage />}
+                {conditionsID7 === 'Atmosphere' && <FogImage />}
+                {conditionsID7 === 'Clear' && <SunnyImage />}
+              </Boop>
+            </WeatherImgWrapper>
+            <FutureTemps>
+              <h1>{JSON.stringify(temperatureDay7).slice(0, 2)}&#176;</h1>
+            </FutureTemps>
+          </SevenDay>
         </WeatherContainer>
       </MainContent>
     </>
@@ -163,8 +233,8 @@ const ReturnToHomepageButton = styled.div`
 
 const MainWeather = styled.div`
   grid-row: span 2 / auto;
-  height: 810px;
-  min-width: 810px;
+  height: 610px;
+  width: 610px;
   background-color: rgba(250, 250, 250, 0.88);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
@@ -187,8 +257,8 @@ const Tomorrow = styled.div`
   background-color: rgba(250, 250, 250, 0.88);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,8 +268,8 @@ const ThirdDay = styled.div`
   background-color: rgba(250, 250, 250, 0.88);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -209,8 +279,8 @@ const FourthDay = styled.div`
   background-color: rgba(250, 250, 250, 0.88);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,8 +291,34 @@ const FiveDay = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   /*   grid-column: span 2 / auto; */
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SixDay = styled.div`
+  background-color: rgba(250, 250, 250, 0.88);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  /*   grid-column: span 2 / auto; */
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SevenDay = styled.div`
+  background-color: rgba(250, 250, 250, 0.88);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  /*   grid-column: span 2 / auto; */
+  height: 300px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -246,8 +342,29 @@ const City = styled.h2`
 
 const Conditions = styled.h3`
   font-size: 2rem;
-  position: relative;
-  /*   font-weight: 400; */
+  font-weight: 400;
+`;
+
+const TempWrapper = styled.div``;
+
+const WeatherImgWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+`;
+
+const WeekdayWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 10px;
+`;
+
+const WeekdayConditions = styled.p`
+  font-size: 1.2rem;
+  padding-left: 12px;
 `;
 
 const Temp = styled.h1`
@@ -273,62 +390,92 @@ const WeekDays = styled.p`
 
 const FutureTemps = styled.h1`
   font-size: 3rem;
-  padding-top: 45px;
+  /*   padding-top: 45px; */
   padding-left: 20px;
 `;
 
 //Images
 const PartlyCloudyImage = styled.div`
   background-image: url(${partlycloudy});
-  height: 180px;
-  width: 180px;
+  height: 100px;
+  width: 100px;
   background-size: 100%;
   /*   margin-left: 20px; */
   margin-top: 20px;
+  /*   transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.4);
+  } */
 `;
 
 const RainImage = styled.div`
   background-image: url(${rain});
-  height: 180px;
-  width: 180px;
+  height: 100px;
+  width: 100px;
   background-size: 100%;
   /*   margin-left: 22px; */
   margin-top: 20px;
+  /*   transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.4);
+  } */
 `;
 
 const StormImage = styled.div`
   background-image: url(${storms});
   background-repeat: no-repeat;
-  height: 180px;
-  width: 180px;
+  height: 100px;
+  width: 100px;
   background-size: 100%;
   /*   margin-left: 17px; */
   margin-top: 20px;
+  /*   transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.4);
+  } */
 `;
 
 const SnowImage = styled.div`
   background-image: url(${snow});
-  height: 180px;
-  width: 180px;
+  height: 100px;
+  width: 100px;
   background-size: 100%;
   /*  margin-left: 17px; */
   margin-top: 20px;
+  /*   transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.4);
+  } */
 `;
 
 const FogImage = styled.div`
   background-image: url(${fog});
-  height: 180px;
-  width: 180px;
+  height: 100px;
+  width: 100px;
   background-size: 100%;
   /* margin-left: 17px; */
   margin-top: 20px;
+  /*   transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.4);
+  } */
 `;
 
 const SunnyImage = styled.div`
   background-image: url(${sunny});
-  height: 180px;
-  width: 180px;
+  height: 100px;
+  width: 100px;
   background-size: 100%;
   /* margin-left: 15px; */
   margin-top: 20px;
+  /*   transition: all 0.5s ease;
+
+  &:hover {
+    transform: scale(1.4);
+  } */
 `;

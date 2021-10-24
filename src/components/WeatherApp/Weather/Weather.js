@@ -42,6 +42,16 @@ const Weather = () => {
   const [conditionsDay5, setConditionsDay5] = useState(undefined);
   const [conditionsID5, setConditionsID5] = useState(undefined);
 
+  //*Day 6
+  const [temperatureDay6, setTemperatureDay6] = useState('');
+  const [conditionsDay6, setConditionsDay6] = useState(undefined);
+  const [conditionsID6, setConditionsID6] = useState(undefined);
+
+  //*Day 7
+  const [temperatureDay7, setTemperatureDay7] = useState('');
+  const [conditionsDay7, setConditionsDay7] = useState(undefined);
+  const [conditionsID7, setConditionsID7] = useState(undefined);
+
   const handleWeatherFetchClick = async () => {
     const API_KEY = 'f1cdc7b61d7768768219833b1d28a7d5';
     try {
@@ -81,6 +91,16 @@ const Weather = () => {
         setTemperatureDay5(data.list[30].main.temp);
         setConditionsDay5(data.list[30].weather[0].description);
         setConditionsID5(data.list[30].weather[0].main);
+
+        //Day 6
+        setTemperatureDay6(data.list[35].main.temp);
+        setConditionsDay6(data.list[35].weather[0].description);
+        setConditionsID6(data.list[35].weather[0].main);
+
+        //Day 7
+        setTemperatureDay7(data.list[15].main.temp);
+        setConditionsDay7(data.list[15].weather[0].description);
+        setConditionsID7(data.list[15].weather[0].main);
       }
     } catch (e) {
       setWeatherData(undefined);
@@ -112,6 +132,12 @@ const Weather = () => {
               temperatureDay5={temperatureDay5}
               conditionsDay5={conditionsDay5}
               conditionsID5={conditionsID5}
+              temperatureDay6={temperatureDay6}
+              conditionsDay6={conditionsDay6}
+              conditionsID6={conditionsID6}
+              temperatureDay7={temperatureDay7}
+              conditionsDay7={conditionsDay7}
+              conditionsID7={conditionsID7}
             />
           </Route>
           <Route path="/">
@@ -128,16 +154,16 @@ const Weather = () => {
 };
 
 const Main = styled.main`
+  height: 100vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 64px 32px;
-  min-height: 100%;
-
-  /*  background-image: url('https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80');
+  background-image: url('https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center bottom; */
+  background-position: center bottom;
 `;
 
 export default Weather;

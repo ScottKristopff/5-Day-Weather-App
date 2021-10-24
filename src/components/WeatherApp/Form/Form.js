@@ -1,7 +1,10 @@
-import TextField from '@mui/material/TextField';
+/* import TextField from '@mui/material/TextField'; */
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
+import useSound from 'use-sound';
+import bubble from '../../Sounds/bubbles.mp3';
 
 export const Form = ({ searchQuery, handleWeatherFetchClick, setSearchQuery }) => {
   //Handlers
@@ -16,6 +19,10 @@ export const Form = ({ searchQuery, handleWeatherFetchClick, setSearchQuery }) =
     history.push('/WeatherUI');
   };
 
+  //Sounds
+  const [play, { stop }] = useSound(bubble, { volume: 2.0 });
+
+  const [isHovering, setIsHovering] = useState(false);
   return (
     <>
       <Wrapper>
@@ -30,6 +37,14 @@ export const Form = ({ searchQuery, handleWeatherFetchClick, setSearchQuery }) =
             size="large"
             variant="contained"
             color="primary"
+            onMouseEnter={() => {
+              setIsHovering(true);
+              play();
+            }}
+            onMouseLeave={() => {
+              setIsHovering(false);
+              stop();
+            }}
             value={searchQuery}
             disabled={!searchQuery}
             onClick={apiWeatherCallAndChangeUrl}
@@ -41,6 +56,8 @@ export const Form = ({ searchQuery, handleWeatherFetchClick, setSearchQuery }) =
     </>
   );
 };
+
+const ButtonContents = styled.div``;
 
 const Wrapper = styled.div`
   display: flex;
