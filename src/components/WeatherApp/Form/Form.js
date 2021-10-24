@@ -2,8 +2,6 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components/macro';
-/* import { useFormik } from 'formik';
-import * as yup from 'yup'; */
 
 export const Form = ({ searchQuery, handleWeatherFetchClick, setSearchQuery }) => {
   //Handlers
@@ -18,48 +16,15 @@ export const Form = ({ searchQuery, handleWeatherFetchClick, setSearchQuery }) =
     history.push('/WeatherUI');
   };
 
-  // Form Validation;
-  /*   const validationSchema = yup.object({
-    city: yup.string('Enter your email').email('Enter a valid email').required('Email is required'),
-    password: yup
-      .string('Enter a city name')
-      .min(8, 'Password should be of minimum 8 characters length')
-      .required('city name is required')
-      .city('Enter a valid city name')
-  }); */
-
-  /*   const WithMaterialUI = () => {
-  const formik = useFormik({
-    initialValues: {
-      city: 'Toronto',
-    },
-    validationSchema: validationSchema,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  }); */
-
   return (
     <>
       <Wrapper>
         <MainTitle>
-          <h1>5 Day Weather App</h1>
+          <h1>Your Weather</h1>
         </MainTitle>
-        <SearchBarWrapper>
-          <form>
-            <TextField
-              fullWidth
-              required
-              name="city"
-              id="city"
-              label="City"
-              defaultValue="Toronto"
-              value={searchQuery}
-              onChange={handleChange}
-              color="primary"
-            />
-          </form>
-        </SearchBarWrapper>
+        <InputContainer>
+          <Input value={searchQuery} onChange={handleChange} placeholder="Toronto" />
+        </InputContainer>
         <WeatherButton>
           <Button
             size="large"
@@ -99,3 +64,25 @@ const SearchBarWrapper = styled.div`
   width: 800px;
   height: min-content;
 `;
+
+const InputContainer = styled.div`
+  width: 30%;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid lightgray;
+`;
+
+const Input = styled.input`
+  border: none;
+  flex: 8;
+  padding-left: 20px;
+`;
+
+/* const Button = styled.button`
+  flex: 1;
+  border: none;
+  background-color: teal;
+  color: white;
+`; */

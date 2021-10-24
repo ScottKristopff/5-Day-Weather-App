@@ -62,7 +62,7 @@ export const WeatherUI = ({
               </p>
             </TodayHigh>
           </MainWeather>
-          <Today>
+          {/* <Today>
             <WeekDays>
               <p>Today</p>
             </WeekDays>
@@ -76,7 +76,7 @@ export const WeatherUI = ({
             <FutureTemps>
               <h1>{JSON.stringify(temperatureNow).slice(0, 2)}&#176;</h1>
             </FutureTemps>
-          </Today>
+          </Today> */}
           <Tomorrow>
             <WeekDays>
               <p>
@@ -162,9 +162,9 @@ const ReturnToHomepageButton = styled.div`
 `;
 
 const MainWeather = styled.div`
-  grid-column: span 2 / auto;
-  height: 500px;
-  min-width: 500px;
+  grid-row: span 2 / auto;
+  height: 810px;
+  min-width: 810px;
   background-color: rgba(250, 250, 250, 0.88);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
@@ -188,6 +188,7 @@ const Tomorrow = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   height: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,6 +199,7 @@ const ThirdDay = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   height: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,6 +210,7 @@ const FourthDay = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
   height: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -217,8 +220,9 @@ const FiveDay = styled.div`
   background-color: rgba(250, 250, 250, 0.88);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 12px;
-  grid-column: span 2 / auto;
-  height: 390px;
+  /*   grid-column: span 2 / auto; */
+  height: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
