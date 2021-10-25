@@ -1,16 +1,40 @@
-import { MainContent, WeatherContainer } from '../Styles/styles';
+import { Wrapper, WeatherContainer } from '../Styles/styles';
 import { BackButton } from '../BackButton/BackButton';
-import styled from 'styled-components/macro';
 import Moment from 'react-moment';
-
-//Images
-import partlycloudy from '../images/cloudy.png';
-import rain from '../images/rain.png';
-import snow from '../images/snow.png';
-import fog from '../images/fog.png';
-import storms from '../images/storms.png';
-import sunny from '../images/sunny.png';
 import { Boop } from '../../Animations/Boop';
+//Styles
+import {
+  ReturnToHomepageButton,
+  MainWeather,
+  Tomorrow,
+  ThirdDay,
+  FourthDay,
+  FiveDay,
+  SixDay,
+  SevenDay
+} from './Styles/styles_weekdays';
+
+import {
+  Date,
+  City,
+  Conditions,
+  WeatherImgWrapper,
+  WeekdayWrapper,
+  WeekdayConditions,
+  Temp,
+  TodayHigh,
+  WeekDays,
+  FutureTemps
+} from './Styles/styles_weatherdata';
+
+import {
+  PartlyCloudyImage,
+  RainImage,
+  StormImage,
+  FogImage,
+  SunnyImage,
+  SnowImage
+} from './Styles/styles_images';
 
 export const WeatherUI = ({
   city,
@@ -18,8 +42,6 @@ export const WeatherUI = ({
   temperatureNow,
   conditionsToday,
   temperatureNowHigh,
-  windSpeed,
-  conditionsID,
   temperatureTomorrow,
   conditionsTomorrow,
   conditionsIDTomorrow,
@@ -39,19 +61,17 @@ export const WeatherUI = ({
   conditionsDay7,
   conditionsID7
 }) => {
-  /*   let date = new Date(); */
-
   return (
     <>
       <ReturnToHomepageButton>
         <BackButton />
       </ReturnToHomepageButton>
-      <MainContent>
+      <Wrapper>
         <WeatherContainer>
           <MainWeather>
             <Date>
               <p>
-                <Moment format="MMMM do[, ] YYYY">{dates}</Moment>
+                <Moment format="MMM Do[, ] YYYY">{dates}</Moment>
               </p>
             </Date>
             <City>
@@ -220,262 +240,7 @@ export const WeatherUI = ({
             </FutureTemps>
           </SevenDay>
         </WeatherContainer>
-      </MainContent>
+      </Wrapper>
     </>
   );
 };
-
-const ReturnToHomepageButton = styled.div`
-  position: absolute;
-  top: 50px;
-  left: 20px;
-`;
-
-const MainWeather = styled.div`
-  grid-row: span 2 / auto;
-  height: 610px;
-  width: 610px;
-  background-color: rgba(250, 250, 250, 0.88);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const Today = styled.div`
-  background-color: rgba(250, 250, 250, 0.88);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const Tomorrow = styled.div`
-  background-color: rgba(250, 250, 250, 0.88);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  height: 300px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const ThirdDay = styled.div`
-  background-color: rgba(250, 250, 250, 0.88);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  height: 300px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const FourthDay = styled.div`
-  background-color: rgba(250, 250, 250, 0.88);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  height: 300px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-const FiveDay = styled.div`
-  background-color: rgba(250, 250, 250, 0.88);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  /*   grid-column: span 2 / auto; */
-  height: 300px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const SixDay = styled.div`
-  background-color: rgba(250, 250, 250, 0.88);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  /*   grid-column: span 2 / auto; */
-  height: 300px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const SevenDay = styled.div`
-  background-color: rgba(250, 250, 250, 0.88);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
-  /*   grid-column: span 2 / auto; */
-  height: 300px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-//Weather Data Styles
-const Date = styled.p`
-  font-size: 1rem;
-  margin-top: 5px;
-  color: #848484;
-  position: relative;
-`;
-
-const City = styled.h2`
-  font-size: 2.8rem;
-  font-family: 'Montserrat', sans-serif;
-  position: relative;
-  /* bottom: 100px; */
-`;
-
-const Conditions = styled.h3`
-  font-size: 2rem;
-  font-weight: 400;
-`;
-
-const TempWrapper = styled.div``;
-
-const WeatherImgWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 20px;
-`;
-
-const WeekdayWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 10px;
-`;
-
-const WeekdayConditions = styled.p`
-  font-size: 1.2rem;
-  padding-left: 12px;
-`;
-
-const Temp = styled.h1`
-  font-size: 12rem;
-  margin-left: 50px;
-  padding-left: -50px;
-  height: min-content;
-  width: min-content;
-`;
-
-const TodayHigh = styled.p`
-  font-size: 1.3rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin: 10px;
-  padding-left: -10px;
-`;
-
-const WeekDays = styled.p`
-  font-size: 2rem;
-  padding-left: 10px;
-`;
-
-const FutureTemps = styled.h1`
-  font-size: 3rem;
-  /*   padding-top: 45px; */
-  padding-left: 20px;
-`;
-
-//Images
-const PartlyCloudyImage = styled.div`
-  background-image: url(${partlycloudy});
-  height: 100px;
-  width: 100px;
-  background-size: 100%;
-  /*   margin-left: 20px; */
-  margin-top: 20px;
-  /*   transition: all 0.5s ease;
-
-  &:hover {
-    transform: scale(1.4);
-  } */
-`;
-
-const RainImage = styled.div`
-  background-image: url(${rain});
-  height: 100px;
-  width: 100px;
-  background-size: 100%;
-  /*   margin-left: 22px; */
-  margin-top: 20px;
-  /*   transition: all 0.5s ease;
-
-  &:hover {
-    transform: scale(1.4);
-  } */
-`;
-
-const StormImage = styled.div`
-  background-image: url(${storms});
-  background-repeat: no-repeat;
-  height: 100px;
-  width: 100px;
-  background-size: 100%;
-  /*   margin-left: 17px; */
-  margin-top: 20px;
-  /*   transition: all 0.5s ease;
-
-  &:hover {
-    transform: scale(1.4);
-  } */
-`;
-
-const SnowImage = styled.div`
-  background-image: url(${snow});
-  height: 100px;
-  width: 100px;
-  background-size: 100%;
-  /*  margin-left: 17px; */
-  margin-top: 20px;
-  /*   transition: all 0.5s ease;
-
-  &:hover {
-    transform: scale(1.4);
-  } */
-`;
-
-const FogImage = styled.div`
-  background-image: url(${fog});
-  height: 100px;
-  width: 100px;
-  background-size: 100%;
-  /* margin-left: 17px; */
-  margin-top: 20px;
-  /*   transition: all 0.5s ease;
-
-  &:hover {
-    transform: scale(1.4);
-  } */
-`;
-
-const SunnyImage = styled.div`
-  background-image: url(${sunny});
-  height: 100px;
-  width: 100px;
-  background-size: 100%;
-  /* margin-left: 15px; */
-  margin-top: 20px;
-  /*   transition: all 0.5s ease;
-
-  &:hover {
-    transform: scale(1.4);
-  } */
-`;

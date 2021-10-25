@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import styled from 'styled-components/macro';
-/* import IconButton from '@mui/material/IconButton'; */
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import { useHistory } from 'react-router-dom';
 import useSound from 'use-sound';
@@ -38,9 +36,3 @@ export const BackButton = () => {
     </div>
   );
 };
-
-/* const ArrowWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`; */

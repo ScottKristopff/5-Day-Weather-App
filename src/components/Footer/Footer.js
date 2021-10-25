@@ -12,6 +12,7 @@ const Center = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 const Desc = styled.p`
   margin: 20px 0px;

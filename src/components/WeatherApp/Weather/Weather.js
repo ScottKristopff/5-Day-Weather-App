@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import styled from 'styled-components/macro';
+import { AppWrapper } from '../Styles/styles';
 import { Route, Switch } from 'react-router-dom';
+import Footer from '../../Footer/Footer';
 //?Component Imports
 import { WeatherUI } from '../WeatherUI/WeatherUI';
 import { Form } from '../Form/Form';
@@ -109,12 +110,12 @@ const Weather = () => {
 
   return (
     <>
-      <Main>
+      <AppWrapper>
         <Switch>
           <Route path="/WeatherUI" exact>
             <WeatherUI
               city={city}
-              date={dates}
+              dates={dates}
               temperatureNow={temperatureNow}
               temperatureNowHigh={temperatureNowHigh}
               conditionsToday={conditionsToday}
@@ -148,22 +149,9 @@ const Weather = () => {
             />
           </Route>
         </Switch>
-      </Main>
+      </AppWrapper>
     </>
   );
 };
-
-const Main = styled.main`
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 64px 32px;
-  background-image: url('https://images.unsplash.com/photo-1428908728789-d2de25dbd4e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-`;
 
 export default Weather;
