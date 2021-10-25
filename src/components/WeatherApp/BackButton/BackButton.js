@@ -23,6 +23,7 @@ export const BackButton = () => {
         <ArrowBackIosNewRoundedIcon
           style={{ fontSize: 50 }}
           onClick={changeUrl}
+          isHovering={isHovering}
           onMouseEnter={() => {
             setIsHovering(true);
             play();
