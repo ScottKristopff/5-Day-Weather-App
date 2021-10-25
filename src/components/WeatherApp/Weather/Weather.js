@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { AppWrapper } from '../Styles/styles';
 import { Route, Switch } from 'react-router-dom';
-import Footer from '../../Footer/Footer';
+
 //?Component Imports
 import { WeatherUI } from '../WeatherUI/WeatherUI';
 import { Form } from '../Form/Form';

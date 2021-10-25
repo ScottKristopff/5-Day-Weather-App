@@ -48,6 +48,7 @@ export const Form = ({ searchQuery, handleWeatherFetchClick, setSearchQuery }) =
             value={searchQuery}
             disabled={!searchQuery}
             onClick={apiWeatherCallAndChangeUrl}
+            isHovering={isHovering}
           >
             Weather Forecast
           </Button>
