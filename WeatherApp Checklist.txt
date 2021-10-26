@@ -1,13 +1,7 @@
 Weather App Todo CheckList
 
-
-
 1) Create a custom Title Design
 
-2) Change farenheight to degrees maybe
+2) Input Form Control
 
-3) Be able to input with the enter key 
-
-4) Input Form Control
-
-5) Fix Footer
+3) Fix Footer
