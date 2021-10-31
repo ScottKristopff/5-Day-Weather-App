@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro';
-
+import { mobile } from '../../../../reponsive';
+import { tablet } from '../../../../reponsive';
 export const ReturnToHomepageButton = styled.div`
   position: absolute;
   top: 50px;
@@ -17,6 +18,13 @@ export const MainWeather = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${mobile({
+    height: '300px',
+    width: '300px'
+  })}/*   ${tablet({
+    height: '300px',
+    width: '300px'
+  })} */
 `;
 export const Today = styled.div`
   background-color: rgba(250, 250, 250, 0.88);
@@ -38,6 +46,10 @@ export const Tomorrow = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${mobile({
+    height: '300px',
+    width: '300px'
+  })}
 `;
 export const ThirdDay = styled.div`
   background-color: rgba(250, 250, 250, 0.88);
@@ -49,6 +61,10 @@ export const ThirdDay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${mobile({
+    height: '300px',
+    width: '300px'
+  })}
 `;
 export const FourthDay = styled.div`
   background-color: rgba(250, 250, 250, 0.88);
@@ -60,6 +76,10 @@ export const FourthDay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${mobile({
+    height: '300px',
+    width: '300px'
+  })}
 `;
 export const FiveDay = styled.div`
   background-color: rgba(250, 250, 250, 0.88);
@@ -72,6 +92,10 @@ export const FiveDay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${mobile({
+    height: '300px',
+    width: '300px'
+  })}
 `;
 
 export const SixDay = styled.div`
@@ -85,6 +109,10 @@ export const SixDay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${mobile({
+    height: '300px',
+    width: '300px'
+  })}
 `;
 
 export const SevenDay = styled.div`
@@ -98,4 +126,8 @@ export const SevenDay = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${mobile({
+    height: '300px',
+    width: '300px'
+  })}
 `;

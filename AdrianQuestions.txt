@@ -1,26 +1,3 @@
-Weather App Todo CheckList
-Watch Josh Video on Media Query's 
-
-1) Input Form Control
-   - Don't know how to disable the button on city names or by the error validation message 
-   rules
-
-2) Make Weather App Responsive
-  a) Make the wrapper responsive to any display size
-  b) Adust Weather UI for laptop and ipad screens  (UI is to big for those screen sizes)
-  c) Make the back button absolute. (Remember to make the parent display relative) Done
-  d) Background Image seems to be a problem when being displayed on mobile
-  e) Is making it display on laptops/ipads important in-terms of my portfolio.
-     What is the most-likely screen size my portfolio will be viewed on.
-
-3) Preload weather based on the geolocation/country? 
-   Or at least fill the name of the country so button is not disabled initially
-   * I couldn't find a reliable hook  
-
-4) I'd save the query string in the URL so you can easily send a link for someone to check a Weather.
-
-
-
 Adrian Questions
 a)  Is making it display on laptops/ipads important in-terms of my portfolio.
      What is the most-likely screen size my portfolio will be viewed on.

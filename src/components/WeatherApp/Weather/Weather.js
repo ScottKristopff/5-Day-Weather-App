@@ -9,7 +9,7 @@ import { Form } from '../Form/Form';
 const Weather = () => {
   // Query States
   const [weatherData, setWeatherData] = useState(undefined);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState('Toronto');
 
   //Weather Information States
   //* Day & Date

@@ -12,6 +12,7 @@ export const PartlyCloudyImage = styled.div`
   width: 100px;
   background-size: 100%;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 export const RainImage = styled.div`
@@ -20,6 +21,7 @@ export const RainImage = styled.div`
   width: 100px;
   background-size: 100%;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 export const StormImage = styled.div`
@@ -29,6 +31,7 @@ export const StormImage = styled.div`
   width: 100px;
   background-size: 100%;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 export const SnowImage = styled.div`
@@ -37,6 +40,7 @@ export const SnowImage = styled.div`
   width: 100px;
   background-size: 100%;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 export const FogImage = styled.div`
@@ -45,6 +49,7 @@ export const FogImage = styled.div`
   width: 100px;
   background-size: 100%;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 export const SunnyImage = styled.div`
@@ -53,4 +58,5 @@ export const SunnyImage = styled.div`
   width: 100px;
   background-size: 100%;
   margin-top: 20px;
+  cursor: pointer;
 `;

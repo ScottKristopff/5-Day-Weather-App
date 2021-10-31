@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-
+import { mobile } from '../../../../reponsive';
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -11,11 +11,12 @@ export const Wrapper = styled.div`
 
 export const MainTitle = styled.h1`
   font-size: clamp(2.5rem, 4vw + 1rem, 5rem);
-  margin: 24px;
+  /* margin: 24px; */
+  ${mobile({ textAlign: 'center', width: '300px' })}
 `;
 
 export const WeatherButton = styled.div`
-  margin-top: 32px;
+  margin-top: 22px;
 `;
 
 export const SearchBarWrapper = styled.div`
@@ -30,10 +31,43 @@ export const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgray;
+  ${mobile({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '300px'
+  })}
 `;
 
+//Form Styles (Styled Components)
+/* 
 export const Input = styled.input`
-  border: none;
-  flex: 8;
-  padding-left: 20px;
+  padding: 20px;
+  margin: 10px 0px;
+  width: 575px;
+  border-radius: 5px;
+  ${mobile({
+    width: '300px'
+  })};
+`; */
+
+/* export const FormWrapper = styled.form`
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
+ */
+/* export const ErrorMessageSpan = styled.span`
+  color: red;
+  font-weight: 500;
+  font-size: 0.75rem;
+  display: none;
+  ${mobile({
+    color: 'red',
+    fontWeight: '500',
+    paddingLeft: '25px'
+  })}
+`;
+ */

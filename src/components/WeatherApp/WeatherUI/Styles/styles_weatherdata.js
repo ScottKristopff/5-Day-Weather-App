@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro';
+import { mobile } from '../../../../reponsive';
 
 export const Date = styled.p`
   font-size: 1rem;
@@ -45,6 +46,12 @@ export const Temp = styled.h1`
   padding-left: -50px;
   height: min-content;
   width: min-content;
+  cursor: pointer;
+  ${mobile({
+    fontSize: '4rem',
+    margin: 0,
+    paddingLeft: 0
+  })}
 `;
 
 export const TodayHigh = styled.p`
@@ -53,6 +60,9 @@ export const TodayHigh = styled.p`
   line-height: 1.2;
   margin: 10px;
   padding-left: -10px;
+  ${mobile({
+    fontSize: '1rem'
+  })}
 `;
 
 export const WeekDays = styled.p`
