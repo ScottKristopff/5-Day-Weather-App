@@ -4,11 +4,11 @@ import { Wrapper } from './Styles/styles';
 
 const Home = () => {
   return (
-    <div>
+    <>
       <Wrapper>
         <Weather />
       </Wrapper>
-    </div>
+    </>
   );
 };
 

@@ -9,6 +9,7 @@ export const AppWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 64px 32px;
+  overflow: none;
   ${mobile({})}
 `;
 
@@ -20,13 +21,8 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${mobile({
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%'
-    /*   height: '1000px' */
-  })}
+
+  ${mobile({})}
 `;
 
 //CSS Grid Weather UI Container
@@ -39,13 +35,11 @@ export const WeatherContainer = styled.div`
   margin: 0 auto;
   width: 100vw;
   ${mobile({
-    display: 'grid',
     gridTemplateColumns: '1fr',
     gridColumnGap: '10px',
     gridRowGap: '20px',
-    margin: '0 auto',
-    width: '100vw',
-    height: '500px'
+    minHeight: '350px',
+    maxHeight: '550px'
   })}
 
   ${tablet({})}
