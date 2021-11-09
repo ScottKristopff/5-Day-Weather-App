@@ -2,22 +2,18 @@ Adrian Questions
 a)  Is making it display on laptops/ipads important in-terms of my portfolio.
      What is the most-likely screen size my portfolio will be viewed on.
 
-b) Input Form Control: Don't know how to disable the button on city names or by the error validation message 
-   rules
-
-c) Background Image seems to be a problem when being displayed on mobile. 
+b) Background image seems to be a problem when being displayed on mobile or 1200px width. 
    Sizing error or styling error ?
+   Other Approaches instead a bg?
+   How to display a different bg on each page.
 
-d) Didn't use a library for form control. I wanted to understand it first before
-   Implementing a library. Let me know if the way I implemented form control is
-   acceptable. 
+c) I need help figuring out what is the best approach in-terms of making the app RWD? Should I make is RWD with Chakra-UI like the form page, 
+   or can I mix the way I apply RWD depending on the page? The app is currently a mix when it comes to RWD implementation. Is that the correct approach?
 
-e) Disabled the sound all together due to time constraint. Couldn't find a way
-  to code a mute button using the use-sound hook.
+d) Is It a better idea to move the input into the weatherUI page. TBH, I'm not happy with the styling of the input page and suggestions on giving my input page a glow up
 
-f) Splitting WeatherUI will require me to use 2-4 different api calls. So I think
-I'll have to implement redux. I think redux will be better for this project all-together but
-I wanted to build something without Redux to realize why it's needed.
 
-h) Let me know if my wrappers/containers are wrong or I if I need some of them at
+e) Let me know if my wrappers/containers are wrong
+
+h) Should I migrate this app over to next.js ?
 

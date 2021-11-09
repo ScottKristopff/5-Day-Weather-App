@@ -32,15 +32,21 @@ export const WeatherContainer = styled.div`
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  margin: 0 auto;
-  width: 100vw;
+  /* margin: 0 auto; */
+  /*  width: 100vw; */
   ${mobile({
+    gridTemplateColumns: '1fr',
+    gridColumnGap: '10px',
+    gridRowGap: '20px'
+    /*     minHeight: '350px',
+    maxHeight: '550px' */
+  })}
+
+  ${tablet({
     gridTemplateColumns: '1fr',
     gridColumnGap: '10px',
     gridRowGap: '20px',
     minHeight: '350px',
     maxHeight: '550px'
   })}
-
-  ${tablet({})}
 `;

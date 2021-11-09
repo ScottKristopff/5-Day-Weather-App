@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App/App';
 import GlobalStyles from './GlobalStyles';
-
+import { ChakraProvider } from '@chakra-ui/react';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
       <GlobalStyles />
     </Router>
   </React.StrictMode>,

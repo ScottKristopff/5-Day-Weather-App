@@ -1,5 +1,6 @@
 import React from 'react';
-import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+import { IconButton } from '@chakra-ui/react';
+import { GoChevronLeft } from 'react-icons/go';
 import { useHistory } from 'react-router-dom';
 import { Boop } from '../../Animations/Boop';
 import styled from 'styled-components/macro';
@@ -16,7 +17,15 @@ export const BackButton = () => {
     <Container>
       <Boop rotation={10}>
         <ArrowContainer>
-          <ArrowBackIosNewRoundedIcon style={{ fontSize: 50 }} onClick={changeUrl} />
+          {/*  <ArrowBackIosNewRoundedIcon style={{ fontSize: 50 }} onClick={changeUrl} /> */}
+          <IconButton
+            variant="unstyled"
+            aria-label="Back Button"
+            fontSize="60px"
+            border="none"
+            /* size="lg"  */ icon={<GoChevronLeft />}
+            onClick={changeUrl}
+          />
         </ArrowContainer>
       </Boop>
     </Container>

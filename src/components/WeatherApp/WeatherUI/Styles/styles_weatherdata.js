@@ -59,7 +59,6 @@ export const TodayHigh = styled.p`
   font-weight: 300;
   line-height: 1.2;
   margin: 10px;
-  padding-left: -10px;
   ${mobile({
     fontSize: '1rem'
   })}
