@@ -7,13 +7,14 @@ b) Background image seems to be a problem when being displayed on mobile or 1200
    Other Approaches instead a bg?
    How to display a different bg on each page.
 
-c) I need help figuring out what is the best approach in-terms of making the app RWD? Should I make is RWD with Chakra-UI like the form page, 
-   or can I mix the way I apply RWD depending on the page? The app is currently a mix when it comes to RWD implementation. Is that the correct approach?
+c) I need help figuring out what is the best approach for making the app RWD? Should I make use the Chakra-UI RWD approach? Similar to the form page.
+   Or can I mix the way I apply RWD depending on the page? The app is currently a mix when it comes to RWD implementation. Is that the correct approach?
 
 d) Is It a better idea to move the input into the weatherUI page. TBH, I'm not happy with the styling of the input page and suggestions on giving my input page a glow up
-
 
 e) Let me know if my wrappers/containers are wrong
 
 h) Should I migrate this app over to next.js ?
 
+i) After implementing ChakraProvider it affected all my font weights. Is it possible to use my own font-family/font weights by using the theme component.
+Or do I have to change the global styles within Chakra-UI
